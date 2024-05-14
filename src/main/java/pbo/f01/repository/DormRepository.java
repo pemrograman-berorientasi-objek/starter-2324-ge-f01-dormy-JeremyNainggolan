@@ -44,7 +44,7 @@ public class DormRepository {
         List<Dorm> dorms = _entityManager.createQuery(jpqa, Dorm.class).getResultList();
         for (Dorm dorm : dorms) {
             System.out.println(dorm);
-            Set<Student> students = new TreeSet<Student>(Comparator.comparing(Student::getId));
+            Set<Student> students = new TreeSet<Student>(Comparator.comparing(Student::getName));
             students.addAll(dorm.getStudents());
             for (Student student : students) {
                 System.out.println(student);
