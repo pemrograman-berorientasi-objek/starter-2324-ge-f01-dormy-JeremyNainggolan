@@ -9,7 +9,7 @@ import pbo.f01.model.*;
  * @author 12S22049 - Agnes Harefa
  */
 
-public class DormRepository {
+public class DormRepository implements DormInterface {
 
     public static void add(String _name, int _capacity, String _gender, EntityManager _entityManager) {
         Dorm checkDorm = _entityManager.find(Dorm.class, _name);
