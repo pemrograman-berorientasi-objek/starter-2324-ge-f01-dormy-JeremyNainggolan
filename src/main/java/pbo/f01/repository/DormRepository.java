@@ -11,8 +11,6 @@ import pbo.f01.model.*;
 
 public class DormRepository {
 
-    static int count = 0;
-
     public static void add(String _name, int _capacity, String _gender, EntityManager _entityManager) {
         Dorm dorm = new Dorm(_name, _capacity, _gender);
 
@@ -27,8 +25,8 @@ public class DormRepository {
         Dorm dorm = _entityManager.find(Dorm.class, _dormName);
 
         if (dorm.getCapacity() >= dorm.getTotalStudent()) {
-            dorm.setTotalStudent(count++);
             if (student != null && dorm != null) {
+                dorm.setTotalStudent(dorm.getTotalStudent() + 1);
                 _entityManager.getTransaction().begin();
                 student.getDorms().add(dorm);
                 dorm.getStudents().add(student);

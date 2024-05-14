@@ -35,11 +35,11 @@ public class Dorm {
     }
 
     public int getTotalStudent() {
-        return totalStudent;
+        return this.totalStudent;
     }
 
     public void setTotalStudent(int totalStudent) {
-        this.totalStudent += totalStudent;
+        this.totalStudent = totalStudent;
     }
 
     public String getName() {
