@@ -44,11 +44,11 @@ public class Dormy {
     }
 
     protected void cleanDB(EntityManager _entityManager) {
-        String[] jpqa = {"DELETE FROM Dorm d", "DELETE FROM Student s"};
+        String[] jpqa = {"DELETE FROM Student_Dorm sd", "DELETE FROM Dorm_Student ds", "DELETE FROM Dorm d", "DELETE FROM Student s"};
 
         for (String query : jpqa) {
             _entityManager.getTransaction().begin();
-            _entityManager.createQuery(query).executeUpdate();
+            _entityManager.createNativeQuery(query).executeUpdate();
             _entityManager.flush();
             _entityManager.getTransaction().commit();
         }
