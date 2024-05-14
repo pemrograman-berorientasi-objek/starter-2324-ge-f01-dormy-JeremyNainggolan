@@ -77,7 +77,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return getId() + "|" + getName() + "|" + getYear() + "|" + getGender();
+        return getId() + "|" + getName() + "|" + getYear();
     }
 
 }
