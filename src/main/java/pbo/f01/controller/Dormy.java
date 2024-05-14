@@ -47,7 +47,6 @@ public class Dormy {
         String[] jpqa = {"DELETE FROM Dorm d", "DELETE FROM Student s"};
 
         for (String query : jpqa) {
-            System.out.println(query);
             _entityManager.getTransaction().begin();
             _entityManager.createQuery(query).executeUpdate();
             _entityManager.flush();

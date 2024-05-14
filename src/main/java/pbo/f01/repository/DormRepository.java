@@ -2,7 +2,6 @@ package pbo.f01.repository;
 
 import javax.persistence.EntityManager;
 import java.util.*;
-
 import pbo.f01.model.*;
 
 /**

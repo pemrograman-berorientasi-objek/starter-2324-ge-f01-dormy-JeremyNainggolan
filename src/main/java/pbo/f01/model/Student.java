@@ -8,7 +8,6 @@ import java.util.Set;
  * @author 12S22049 - Agnes Harefa
  */
 
-
 @Entity
 @Table(name = "student")
 public class Student {

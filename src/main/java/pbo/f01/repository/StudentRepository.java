@@ -1,7 +1,6 @@
 package pbo.f01.repository;
 
 import javax.persistence.EntityManager;
-
 import pbo.f01.model.Student;
 
 /**
