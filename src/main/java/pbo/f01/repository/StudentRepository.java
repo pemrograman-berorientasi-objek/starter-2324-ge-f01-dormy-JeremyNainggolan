@@ -11,10 +11,14 @@ import pbo.f01.model.Student;
 public class StudentRepository {
 
     public static void add(String _id, String _name, String _entranceYear, String _gender, EntityManager _entityManager) {
-        Student student = new Student(_id, _name, _entranceYear, _gender);
-        _entityManager.getTransaction().begin();
-        _entityManager.persist(student);
-        _entityManager.flush();
-        _entityManager.getTransaction().commit();
+        Student checkStudent = _entityManager.find(Student.class, _id);
+
+        if (checkStudent == null) {
+            Student student = new Student(_id, _name, _entranceYear, _gender);
+            _entityManager.getTransaction().begin();
+            _entityManager.persist(student);
+            _entityManager.flush();
+            _entityManager.getTransaction().commit();
+        }
     }
 }
